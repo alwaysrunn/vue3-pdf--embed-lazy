@@ -1,0 +1,4 @@
+export const PUBLICK_KEY =
+  'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCDfdfROPzS+o6kU6DvXrJqSPRQN1270Yepw08G0wKTtORXepOiGQ0ju7yOaewuhcXix9zFpK3egofY36Bxjd37nBk5PW1TTJBepl9nxzACTULeuEA2f8HkqaGjqHJpKbDyhhgDnUIbhSvobcvG/FjCuWQsi2KXZGu3fgInzISHAQIDAQAB'
+
+export const FILE_PREFIX = 'https://static.wenge.com/aim/'

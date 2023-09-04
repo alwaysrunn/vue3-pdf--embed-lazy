@@ -1,0 +1,298 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './base.less';
+
+//影响ant message的样式
+svg {
+  vertical-align: initial;
+}
+:focus {
+  outline: none;
+}
+
+.btn {
+  @apply py-2 px-4 bg-blue-500 text-white rounded-lg;
+}
+
+/* // 前面显示蓝色竖条 */
+.bar-vertical {
+  font-size: 18px;
+  position: relative;
+  padding-left: 20px;
+  vertical-align: middle;
+  &:before {
+    content: '';
+    width: 12px;
+    height: 70%;
+    background: url('@/assets/img/bar.svg') no-repeat center / contain;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.normal {
+    font-weight: normal;
+  }
+  &.blod {
+    font-weight: bold;
+  }
+  &.sm {
+    font-size: 14px;
+  }
+  &.md {
+    font-size: 16px;
+  }
+  &.lg {
+    font-size: 22px;
+  }
+  &.file1 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file1.svg');
+    }
+  }
+  &.file2 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file2.svg');
+    }
+  }
+  &.file3 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file3.svg');
+    }
+  }
+  &.file4 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file4.svg');
+    }
+  }
+  &.file5 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file5.svg');
+    }
+  }
+  &.file6 {
+    &:before {
+      width: 14px;
+      background-image: url('@/assets/img/file/file6.svg');
+    }
+  }
+}
+
+//鼠标点击效果
+.link {
+  cursor: pointer;
+  color: @color-primary-1;
+}
+
+//竖向显示字
+.vertical-text {
+  writing-mode: vertical-lr; /* 从上到下，从左到右 */
+  text-orientation: upright; /* 让文字正立显示 */
+  white-space: nowrap; /* 不换行 */
+}
+
+//表单盒子
+.form-container {
+  padding: 0;
+  ::v-deep(.ant-calendar-picker) {
+    width: 100%;
+  }
+  ::v-deep(.ant-row) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+// 搜索样式盒子
+.flow {
+  display: inline-flex;
+  flex-flow: row wrap;
+  gap: @gap-5sm;
+}
+
+//全屏宽高
+.screen-full {
+  width: 100%;
+  height: 100%;
+}
+
+// 侧边栏右边内容区域
+.content-area {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+// 盒子内边距
+.content-inner {
+  padding: 20px;
+  background: @color-white;
+}
+
+.label-width {
+  width: 300px;
+}
+
+.my-record {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f8ff;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px 0px 0px 8px;
+  opacity: 0.9;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4E5969;
+  letter-spacing: .7em;
+  cursor: pointer;
+  .arrow{
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-top: 4px;
+    background: url('@/assets/img/qa/left-double.svg') no-repeat center / contain;
+
+  }
+}
+
+.com-btn{
+    border-radius: 3px;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: 400;
+    color: #f90;
+    line-height: 24px;
+    &.blue{
+      color: @color-primary-2;
+      border-color: 1px solid @color-primary-2;
+    }
+    &.yellow{
+      color: #f90;
+      border-color: 1px solid #ff9900;
+    }
+    &.cyan{
+      color: #48c9d8;
+      border-color: 1px solid #48c9d8;
+    }
+    &.red{
+      color: #e50000;
+      border-color: 1px solid #e50000;
+    }
+}
+
+.aa {
+  border: 1px solid red;
+}
+
+//消息通知框
+.notify-box {
+  cursor: pointer;
+  .notify-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    display: inline-block;
+    background: url('@/assets/img/record/success.svg') no-repeat center / contain;
+  }
+  .notify-desc {
+    margin-bottom: 1px;
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 1px;
+    }
+  }
+  .notify-btn {
+    flex-shrink: 0;
+    margin-left: 10px;
+    padding: 2px 10px;
+    background: @color-primary-1;
+    color: #fff;
+    border-radius: 4px;
+  }
+}
+
+//作为依据
+.as-basic {
+  box-shadow: 0px 12px 48px 16px rgba(0, 0, 0, 0.03), 0px 9px 28px 0px rgba(0, 0, 0, 0.05),
+    0px 6px 16px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  background: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  .icon-left {
+    width: 14px;
+    height: 14px;
+    background: url('@/assets/img/arrow-left.svg') no-repeat center / contain;
+    margin-right: 6px;
+  }
+}
+
+.un-read {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: @color-danger-1;
+}
+
+//滚动条
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ced9f8;
+  border-radius: 2px;
+  box-shadow: inset 0 0 6px rgba(224, 224, 224, 0.2);
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(219, 219, 219, 0.05);
+}
+
+// .ant-tooltip {
+//   max-width: 600px !important;
+//   max-height: 600px !important;
+//   overflow: hidden !important;
+// }
+
+// //ant-tooltip 样式统一
+// .ant-tooltip-inner {
+//   background: #fff !important;
+//   color: #5b606a !important;
+//   border: 1px solid #ccc;
+// }
+// .ant-tooltip-arrow-content {
+//   background: #fff !important;
+// }
+
+.ant-btn {
+  border-radius: 4px !important;
+}
+
+.ant-btn-primary {
+  background: @color-primary-1 !important;
+}
+
+.ant-pagination-slash {
+  margin: 0 4px 0 0 !important;
+}
+
+.ant-pagination-simple .ant-pagination-simple-pager input {
+  padding: 0 0 !important;
+  width: 40px !important;
+}
+
+
