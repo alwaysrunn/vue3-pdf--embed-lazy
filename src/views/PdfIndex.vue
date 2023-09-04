@@ -1,15 +1,16 @@
 <script lang="ts" setup>
 import VuePdfEmbed from '@/components/vue-pdf-embed/src/index.js';
+import pdf from '/public/aa.pdf';
 
 import { useIntersectionObserver } from '@vueuse/core';
 
 
-const qaStore = useQaStore();
 const pageSize = ref(1);
 
 const total = ref(1)
 
-const source = ref('')
+const source = ref(pdf)
+const pageNo = ref(1);
 
 
 function scrollToPage(v) {
@@ -20,7 +21,6 @@ function scrollToPage(v) {
 
 function onLoaded(pdf) {
   total.value = pdf.numPages;
-
   setTimeout(() => {
     let parentElement = document.getElementById('pdfembed');
     Array.from(parentElement.children).forEach((child, idx) => {
@@ -36,7 +36,7 @@ function IntersectionObserverComponent(child) {
     child,
     ([{ isIntersecting }], observerElement) => {
       if (isIntersecting == true) {
-        _info.value.pageNo = parseInt(child.id.slice(9));
+        pageNo.value = parseInt(child.id.slice(9));
       }
     },
     {
